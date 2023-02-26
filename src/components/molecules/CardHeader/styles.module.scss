@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--secondary);
+  padding: 30px 35px 25px 35px;
+  border-bottom: 1px solid var(--light-grey);
+
+  button {
+    i {
+      color: var(--light-grey);
+      font-size: 16px;
+    }
+  }
+}

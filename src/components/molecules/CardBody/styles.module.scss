@@ -1,0 +1,20 @@
+.body {
+  padding: 10px 35px;
+  color: var(--secondary);
+
+  .title {
+    letter-spacing: 5px;
+    font-weight: 600;
+  }
+
+  .applyContainer {
+    text-align: center;
+    transform: translateY(28px);
+
+    .applyButton {
+      background: var(--main);
+      color: var(--primary);
+    }
+  }
+
+}

@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--light-grey);
+  margin-top: 20px;
+  padding: 20px 0 0 0;
+
+  .title {
+    letter-spacing: 5px;
+    font-weight: 600;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+
+    .buttonAction {
+      background: var(--input-grey);
+
+      .font-quick-sand {
+        font-family: var(--font-quick-sand);
+      }
+
+      .font-gelasio {
+        font-family: var(--font-gelasio);
+      }
+    }
+
+    .font-active {
+      background: var(--background);
+      color: var(--primary);
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .color-active {
+      color: var(--background);
+    }
+
+    .button-color-1 {
+      background: var(--main);
+    }
+
+    .button-color-2 {
+      background: var(--blue-main);
+    }
+
+    .button-color-3 {
+      background: var(--purple-main);
+    }
+  }
+}
+
+

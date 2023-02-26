@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500;600;700&display=swap');
+
 h1,
 h2,
 h3,
@@ -11,4 +14,6 @@ p {
 
 :root {
   --radius-primary: 20px;
+  --font-quick-sand: 'Quicksand', sans-serif;
+  --font-gelasio: 'Gelasio', serif;
 }

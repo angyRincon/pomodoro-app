@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, ReactElement} from 'react';
 import classes from './styles.module.scss'
 
 type variantsMappingType =  "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body1" | "body2" | "huge";
@@ -17,7 +17,7 @@ const variantsMapping = {
 
 interface Props {
     variant: variantsMappingType
-    label: string
+    label: string | ReactElement
     className?: string
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SettingsModal from "../components/organisms/Modal";
 import Typography from "../components/atoms/Typography";
 import classes from "../index.module.scss"
@@ -12,25 +12,28 @@ const buttonItems = [
     {label: 'long break', active: false},
 ]
 const Pomodoro = () => {
+    const [open, setOpen] = useState(false)
+
     return (
-        <div className={classes.container}>
-            <Typography variant='h1' label='pomodoro'/>
+        <>
+            <div className={classes.container}>
+                <Typography variant='h1' label='pomodoro'/>
 
-            <ButtonStack items={buttonItems}/>
+                <ButtonStack items={buttonItems}/>
 
-            <Clock/>
+                <Clock/>
 
-            <SettingsModal/>
+                <Button
+                    variant='text-only'
+                    className={classes.iconButton}
+                    handleClick={() => setOpen(true)}
+                >
+                    <i className="fa-solid fa-gear"></i>
+                </Button>
+            </div>
 
-            <Button
-                variant='text-only'
-                className={classes.iconButton}
-                handleClick={() => console.log('openModal')}
-            >
-                <i className="fa-solid fa-gear"></i>
-            </Button>
-
-        </div>
+            <SettingsModal open={open} handleClose={() => setOpen(false)}/>
+        </>
     );
 };
 
