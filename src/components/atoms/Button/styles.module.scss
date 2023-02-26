@@ -1,0 +1,23 @@
+.button {
+  border: none;
+  font-size: 11px;
+  background: none;
+  font-weight: 600;
+  color: var(--default);
+  cursor: pointer;
+}
+
+.normal {
+  width: 100px;
+  height: 38px;
+  border-radius: var(--radius-primary);
+}
+
+.text-only {
+  color: inherit;
+}
+
+.active {
+  background: var(--main);
+  color: var(--secondary);
+}

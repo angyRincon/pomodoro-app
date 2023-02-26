@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: var(--secondary);
+  border-radius: var(--radius-primary);
+  padding: 5px;
+}
