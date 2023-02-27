@@ -18,7 +18,6 @@ const CircularProgress:FC<Props> = ({ size, strokeWidth, percentage }) => {
     const circumference = radius * Math.PI * 2;
     const dash = (progress * circumference) / 100;
 
-
     return (
         <svg width={size} height={size} viewBox={viewBox}>
             <circle
@@ -42,16 +41,6 @@ const CircularProgress:FC<Props> = ({ size, strokeWidth, percentage }) => {
                 strokeLinecap="round"
                 style={{ transition: "all 0.5s" }}
             />
-            {/*<text*/}
-            {/*    fontSize="40px"*/}
-            {/*    x="50%"*/}
-            {/*    y="50%"*/}
-            {/*    dy="20px"*/}
-            {/*    textAnchor="middle"*/}
-            {/*    className={classes.time}*/}
-            {/*>*/}
-            {/*    {`${percentage}%`}*/}
-            {/*</text>*/}
         </svg>
     );
 };

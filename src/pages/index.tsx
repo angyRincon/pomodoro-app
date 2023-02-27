@@ -26,13 +26,14 @@ const Pomodoro = () => {
         let localMinutes;
         let localSeconds;
 
-        let percentageValue = (duration * 100) / timer
 
         interval.current = setInterval(() => {
-            percentageValue = percentageValue - 1
-            setPercentage(percentageValue)
             localMinutes = parseInt(String(timer / 60), 10)
             localSeconds = parseInt(String(timer % 60), 10)
+            let percentageValue = (localMinutes * 100) / minutes
+
+            percentageValue = percentageValue - 1
+            setPercentage(percentageValue)
 
             setMinutes(localMinutes < 10 ? `0${localMinutes}` : localMinutes)
             setSeconds(localSeconds < 10 ? `0${localSeconds}` : localSeconds)
