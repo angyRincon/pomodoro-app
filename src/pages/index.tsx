@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import SettingsModal from "../components/organisms/Modal";
 import Typography from "../components/atoms/Typography";
 import classes from "../index.module.scss"
@@ -12,7 +12,46 @@ const buttonItems = [
     {label: 'long break', active: false},
 ]
 const Pomodoro = () => {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
+    const [minutes, setMinutes] = useState(25)
+    const [seconds, setSeconds] = useState(`00`)
+    const [percentage, setPercentage] = useState(100)
+    const [stop, setStop] = useState(false)
+    const interval = React.useRef(null);
+
+    const start = () => {
+        setStop(true)
+        const duration = 60 * 25
+        let timer = duration;
+        let localMinutes;
+        let localSeconds;
+
+        let percentageValue = (duration * 100) / timer
+
+        interval.current = setInterval(() => {
+            percentageValue = percentageValue - 1
+            setPercentage(percentageValue)
+            localMinutes = parseInt(String(timer / 60), 10)
+            localSeconds = parseInt(String(timer % 60), 10)
+
+            setMinutes(localMinutes < 10 ? `0${localMinutes}` : localMinutes)
+            setSeconds(localSeconds < 10 ? `0${localSeconds}` : localSeconds)
+
+            if (--timer < 0) timer = duration
+        }, 1000)
+    }
+
+    const stopClock = () => {
+        setMinutes(minutes)
+        setSeconds(seconds)
+        setStop(false)
+        clearInterval(interval.current)
+    }
+
+    const handleStartStop = () => {
+        if (!stop) start()
+        else stopClock()
+    }
 
     return (
         <>
@@ -21,7 +60,13 @@ const Pomodoro = () => {
 
                 <ButtonStack items={buttonItems}/>
 
-                <Clock/>
+                <Clock
+                    minutes={minutes}
+                    seconds={seconds}
+                    percentage={percentage}
+                    stop={stop}
+                    handleStartStop={handleStartStop}
+                />
 
                 <Button
                     variant='text-only'

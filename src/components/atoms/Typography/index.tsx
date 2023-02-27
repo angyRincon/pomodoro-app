@@ -17,7 +17,7 @@ const variantsMapping = {
 
 interface Props {
     variant: variantsMappingType
-    label: string | ReactElement
+    label: string | number | ReactElement
     className?: string
 }
 

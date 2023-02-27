@@ -31,7 +31,7 @@ const Button: FC<Props> = (
     ].join(' ')
 
     return (
-        <button className={buttonClasses} onClick={handleClick}>
+        <button type='button' className={buttonClasses} onClick={handleClick}>
             {label ?? children}
         </button>
     );
